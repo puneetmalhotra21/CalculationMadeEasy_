@@ -1,3 +1,4 @@
+
 const http = require('http');
 const fs = require('fs');
 const path = require('path');
@@ -20,6 +21,7 @@ const server = http.createServer((req, res) => {
     if (err) {
       console.error(`Error reading file ${filePath}:`, err);
       res.statusCode = 500;
+     
       res.end(`Error reading file ${filePath}`);
     } else {
       const ext = path.extname(filePath).toLowerCase();
