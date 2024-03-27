@@ -1,29 +1,27 @@
-import { setSharedArray } from './sharedData.js';
+import { setSharedArray,setSharedArray_MB } from './sharedData.js';
 
 export function RandomNumGen(elemntId){
-  //  debugger; 
+  //  //debugger; 
     let elemId= elemntId;
     const [firstVal, operator, secondVal] = elemId.split("_");
 
  
-    const range1 = firstVal =='single'  ? [1, 9] : (firstVal =='double' ? [11, 99]:  [101, 999]); 
-    const range2= secondVal =='single'  ? [1, 9] : (secondVal =='double' ? [11, 99]:  [101, 999]);
-    //debugger;
+    const range1 = getRange(firstVal);
+   const range2 = getRange(secondVal);
     const result = generateUniqueCombinations(range1, range2);
     setSharedArray(result);
-    //debugger;
+    ////debugger;
 }
 
 
-function calculateArraySizeInBytes(arr) {
-    const jsonString = JSON.stringify(arr);
-    const bytes = new TextEncoder().encode(jsonString).length;
-    //debugger;
-    return bytes;
+function getRange(digitVal){
+  let range = digitVal =='single'  ? [1, 9] : (digitVal =='double' ? [11, 99]:  [101, 999]); 
+  return range
 }
+
   
 function generateUniqueCombinations(range1, range2, desiredLength = 200) {
-    const combinations = [];
+    let  combinations = [];
   
     for (let i = range1[0]; i <= range1[1]; i++) {
       for (let j = range2[0]; j <= range2[1]; j++) {
@@ -32,20 +30,69 @@ function generateUniqueCombinations(range1, range2, desiredLength = 200) {
     }
   
     // Fisher-Yates Shuffle
-    for (let i = combinations.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      [combinations[i], combinations[j]] = [combinations[j], combinations[i]];
-    }
-  
+    combinations = shuffle(combinations);
     const slicedResult = combinations.slice(0, desiredLength);
-  
-    const sizeInBytes = calculateArraySizeInBytes(slicedResult);
-  
-    console.log(`Array size: ${sizeInBytes} bytes`);
-  
     return slicedResult;
   }
 
+  export function RandomNumSetGen(elemId){
+    
+    let tempArry = elemId.split('_');
+    if(tempArry.length ==2){
+      let digitStr = tempArry[1];
+      const range = getRange(digitStr);
+      const result = generateUniqueSet(range);
+      setSharedArray_MB(result);
+    }
+    
+    //debugger;
+}
+ 
+
+function generateUniqueSet(range) {
+  
+    const numArray = [];
+  
+    for (let i = range[0]; i <= range[1]; i++) {
+          numArray.push(i);
+    }
+
+    let  combinations = generateCombinations(numArray);
+    console.log(combinations);
+    return combinations;
+
+  }
+
+
+
+function generateCombinations(numArray) {
+    const combinations = [];
+
+    const generate = (arr, index, combination) => {
+        if (combination.length === 5) {
+            combinations.push(shuffle(combination)); // Shuffle the combination before pushing
+            return;
+        }
+
+        if (index >= arr.length) return;
+
+        generate(arr, index + 1, [...combination, arr[index]]);
+        generate(arr, index + 1, [...combination]);
+    };
+
+    generate(numArray, 0, []);
+
+    return combinations;
+}
+
+
 
   
+function shuffle(array) {
+  for (let i = array.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [array[i], array[j]] = [array[j], array[i]];
+  }
+  return array;
+}
   

@@ -1,0 +1,43 @@
+
+/* topicstyle.css */
+.fakeimg {
+    height: 200px;
+    background: #aaa;
+  }
+  
+  .exercise_bg {
+    background-color: #a2aeca;
+  }
+  
+  /* Style to indent the sublist */
+  .nav-item .nav-sublist {
+      margin-left: 1.5em; /* Adjust the margin as needed */
+  }
+
+  .nav-link {
+    font-size: small;
+    color:black
+  }
+  
+  .countdown-clock {
+    width: 50px;
+    height: 50px;
+    border: 2px solid black;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 17px;
+    font-weight: bold;
+  }
+  
+  #countdownNumber {
+    animation: countdownAnimation 1s linear infinite;
+  }
+  
+  @keyframes countdownAnimation {
+    0% { opacity: 1; }
+    50% { opacity: 0.5; }
+    100% { opacity: 1; }
+  }
+  

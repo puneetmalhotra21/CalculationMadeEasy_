@@ -1,3 +1,3 @@
-import { Intializer } from "./intializer.js";
-let numArray;
-Intializer();
+import { LoadDocument } from "./loadDocument.js";
+
+LoadDocument();

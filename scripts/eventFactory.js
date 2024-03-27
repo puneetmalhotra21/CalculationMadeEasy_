@@ -1,6 +1,9 @@
 import {RandomNumGen} from  "./randomNumGenerator.js";
-import { topicIds,exerciseIds } from './config.js';
+import { topicIds,subTopicIds } from './config.js';
+import { LoadQuestion } from './loadQuestion.js';
 import { LoadDataExercise } from './loadDataExercise.js';
+import { preparePanel,buildSMWExcercise,endSMWExcercise } from './memoryBuilder/preparePanel.js';
+import{RandomNumSetGen} from './randomNumGenerator.js';
 
 export function TopicToggle(event){
    
@@ -16,7 +19,7 @@ export function TopicToggle(event){
     });
     
     document.querySelectorAll('.nav-link').forEach(function (a) {
-      debugger;
+     // //debugger;
         if(topicIds.includes(a.id)){
         a.classList.remove('active');
        } 
@@ -37,11 +40,11 @@ export function TopicToggle(event){
 
  }
 
- export function ToggleExercise(event){
+ export function ToggleExercisePanel(event){
    
     let exerElements = document.getElementsByClassName("exercise_cls");
     let anchrElem = event.target;
-   debugger;
+   ////debugger;
     let elemtId = anchrElem.id + '_container';
    
     Array.from(exerElements).forEach(function(element) {
@@ -58,22 +61,24 @@ export function TopicToggle(event){
  }
 
  export function ExcerciseSetup(event){
-   // debugger;
    let elemId= event.target.id;
    RandomNumGen(elemId);
-   
-    
  }
 
- export function ChangeQuestion(event){
-    debugger;
-    LoadDataExercise(event);
+ export function SeeMemorizeWriteSetup(event){
+    let elemId= event.target.id;
+    RandomNumSetGen(elemId);
   }
 
- export function ActivateExercise(event){
+ export function ChangeQuestion(event){
+   // //debugger;
+    LoadQuestion(event);
+  }
+
+  function highlightSubExcercise(event){
     let elemId = event.target.id;
     
-    exerciseIds.forEach(id => {
+    subTopicIds.forEach(id => {
         const selector = `[id="${id}"]`; 
         const element = document.querySelector(selector);
         if (element) {
@@ -87,4 +92,30 @@ export function TopicToggle(event){
 
  }
 
+ export function subExerciseHandler(event){
+    highlightSubExcercise(event);
+    ToggleExercisePanel(event);
+    ExcerciseSetup(event); 
+    LoadDataExercise(event);
 
+ }
+
+ export function ChangeOperator(event){
+    let slctId = event.target.id;
+    let currOpId = slctId.replace('slct','op');
+    
+    let opVal =  document.getElementById(slctId).selectedOptions[0].innerText;
+    document.getElementById(currOpId).innerHTML = opVal !='Select Operation' ? opVal : 'x';
+ }
+
+export function SetupSeeMemorizeWrite(){
+ //debugger;
+    if(preparePanel()){
+        buildSMWExcercise();
+    }
+    
+} 
+
+export function EndSMWExercise(){
+    endSMWExcercise();
+}

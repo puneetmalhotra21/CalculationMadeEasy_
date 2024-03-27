@@ -5,353 +5,53 @@
   <title>Calculation Made Easy</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="style/topicstyle.css" type="text/css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
   <script type="module" src="scripts/main.js"></script>
-  
-  <style>
-    .fakeimg {
-      height: 200px;
-      background: #aaa;
-    }
-    .exercise_bg{
-      background-color: #abc7cf;
-    }
+  <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" /> -->
 
-
-    /* Style to indent the sublist */
-    .nav-item .nav-sublist {
-        margin-left: 1.5em; /* Adjust the margin as needed */
-    }
-  </style>
 </head>
-<body>
+  <body>
 
-<div class="p-5 text-white text-center" style="background-color: #5197aa;">
-  <h1 style="font-family: math;">Calculation Made Easy</h1>
+    <div class="p-5 text-white text-center" style="background-color: #5197aa;">
+      <h1 style="font-family: math;">Calculation Made Easy</h1>
 
-</div>
+    </div>
 
-<div class="row text-center" style="background-color: rgb(0, 0, 0);">
-  <div class="col-12">
-    <div id="black-div" style="color: rgb(255, 255, 255); white-space: nowrap;"><i> -- Run fast Slowly --</i> </div>
-  </div>
-</div>
+    <div class="row text-center" style="background-color: rgb(0, 0, 0);">
+      <div class="col-12">
+        <div id="black-div" style="color: rgb(255, 255, 255); white-space: nowrap;"><i> -- Run fast Slowly --</i> </div>
+      </div>
+    </div>
 
-
-    
-  </div>
-
-</nav>
-<div class="container mt-5">
-  <div class="row">
-    <div class="col-sm-4">
-      <h3 class="mt-4">Topics</h3>
-      <div class="row gx-0">
-        <div class="col-sm-4">
-          <p>Go step by step</p>
-        </div>
-        <div class="col-sm-2">
-          <i class="fa fa-line-chart" aria-hidden="true"></i>
-        </div>
-      </div>
-      <ul class="nav nav-pills flex-column">
-        <li class="nav-item">
-          <a class="nav-link active" href="#" id="how_to_use">How to use</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#" id="questions">Questions</a> 
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#" id="prob_goal">Problem vs Goal</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link " href="#" id="psycho_of_mind">Psychology of Mind</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link " href="#" id="humn_do_calc"> Human Mind do calculations</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link " href="#" id="how_smart_do_calc">How smart people do calculations</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link " href="#" id="problem_solver">Problem Solver</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link  " href="#" id="exercise">Exercise</a>
-          <ul class="nav flex-column nav-sublist" id="exercise_sub" style="display: none;">
-            <li class="nav-item">
-                <a class="nav-link" href="#" id="single_x_single">Single x Single</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#" id="single_x_double">Single x Double</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#" id="double_x_double">Double x Double</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#" id="single_x_triple">Single x Triple</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#" id="double_x_triple">Double x Triple</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#" id="custom_x_digit"> Customize</a>
-            </li>
-              <!-- Add more sub-items as needed -->
-        </ul>
-        </li>
-      </ul>
-      <hr class="d-sm-none">
-    </div>
-    <div id="how_to_use_topic" class="col-sm-8 topic_cls" style="display: none;">
-      <h2 class="mt-5"  >HOW TO USE</h2>
-      <h5> </h5>
-      <div class="fakeimg">Fake Image</div>
-      <p>Some text..</p>
-      <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
-    </div>
-    <div id="questions_topic" class="col-sm-8 topic_cls" style="display: none;">
-      <h2 class="mt-5">Questions</h2>
-      <h5> </h5>
-      <div class="fakeimg">Fake Image</div>
-      <p>Some text..</p>
-      <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
-    </div>
-    <div id="prob_goal_topic" class="col-sm-8 topic_cls" style="display: none;">
-      <h2 class="mt-5">Problem vs Goal</h2>
-      <h5> </h5>
-      <div class="fakeimg">Fake Image</div>
-      <p>Some text..</p>
-      <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
-    </div>
-    <div id="psycho_of_mind_topic" class="col-sm-8 topic_cls" style="display: none;">
-      <h2 class="mt-5">Psychology of Mind</h2>
-      <h5> </h5>
-      <div class="fakeimg">Fake Image</div>
-      <p>Some text..</p>
-      <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
-    </div>
-    <div id= "humn_do_calc_topic" class="col-sm-8 topic_cls" style="display: none;">
-      <h2 class="mt-5">Human Mind Do Calculation</h2>
-      <h5> </h5>
-      <div class="fakeimg">Fake Image</div>
-      <p>Some text..</p>
-      <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
-    </div>
-    <div id= "how_smart_do_calc_topic" class="col-sm-8 topic_cls" style="display: none;">
-      <h2 class="mt-5">How Smart People Do Calculation</h2>
-      <h5> </h5>
-      <div class="fakeimg">Fake Image</div>
-      <p>Some text..</p>
-      <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
-    </div>
-    <div id="problem_solver_topic" class="col-sm-8 topic_cls" style="display: none;">
-      <h2 class="mt-5">Problem Solver</h2>
-      <h5> </h5>
-      <div class="fakeimg">Fake Image</div>
-      <p>Some text..</p>
-      <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
-    </div>
-    <div id="exercise_topic" class="col-sm-8 topic_cls" style="display: block;">
-      <!--single_x_single-->
-      <div class="container mt-3 exercise_cls" id="single_x_single_container" style="display: block;"> 
-        <h2>Slower = Faster</h2>
-        <div class="card">
-          <div class="card-header text-center">0 Level. Build Patience. (single x single)</div>
-          <div class="card-body">
-            <div class="container mt-3">
-              <label for="integerInput" class="form-label">   <span id="single_x_single_Q1">2</span><span id="operator_symbl">*</span><span id="single_x_single_Q2">3</span></label>
-              <input type="number" class="form-control answr_cls " id="single_x_single_input" placeholder="your answer" step="1" style="width: 20%;">
-            </div>
-            <br/>
-            <button type="button" id="start_btn" class="btn btn-dark">Start</button>
-          </div> 
-          <div class="card-footer">
-            <div class="container-fluid">
-              <div class="row">
-                <div class="col-12">
-                  <div class="form-check form-switch">
-                    <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
-                    <label class="form-check-label" for="flexSwitchCheckChecked">Check Your Patience</label>
-                  </div>
-                </div>
-              </div>
-            </div>
+    <div>
+      <br/>
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-10">
+         
           </div>
-        </div>
-      </div>
-       <!--single_x_double-->
-       <div class="container mt-3 exercise_cls" id="single_x_double_container" style="display: none;">
-        <h2>Slower = Faster</h2>
-        <div class="card">
-          <div class="card-header text-center">0 Level. Build Patience. (single x double)</div>
-          <div class="card-body">
-            <div class="container mt-3">
-              <label for="integerInput" class="form-label">   <span id="single_x_double_Q1">2</span><span id="operator_symbl">*</span><span id="single_x_double_Q2">3</span></label>
-              <input type="number" class="form-control answr_cls " id="single_x_double_input" placeholder="your answer" step="1" style="width: 20%;">
-            </div>
-            <br/>
-            <button type="button" id="start_btn" class="btn btn-dark">Start</button>
-          </div> 
-          <div class="card-footer">
-            <div class="container-fluid">
-              <div class="row">
-                <div class="col-12">
-                  <div class="form-check form-switch">
-                    <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
-                    <label class="form-check-label" for="flexSwitchCheckChecked">Check Your Patience</label>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!--single_x_triple-->
-      <div class="container mt-3 exercise_cls" id="single_x_triple_container" style="display: none;">
-        <h2>Slower = Faster</h2>
-        <div class="card">
-          <div class="card-header text-center">0 Level. Build Patience. (single x triple)</div>
-          <div class="card-body">
-            <div class="container mt-3">
-              <label for="integerInput" class="form-label">   <span id="single_x_triple_Q1">2</span><span id="operator_symbl">*</span><span id="single_x_triple_Q2">3</span></label>
-              <input type="number" class="form-control answr_cls " id="single_x_triple_input" placeholder="your answer" step="1" style="width: 20%;">
-            </div>
-            <br/>
-            <button type="button" id="start_btn" class="btn btn-dark">Start</button>
-          </div> 
-          <div class="card-footer">
-            <div class="container-fluid">
-              <div class="row">
-                <div class="col-12">
-                  <div class="form-check form-switch">
-                    <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
-                    <label class="form-check-label" for="flexSwitchCheckChecked">Check Your Patience</label>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!--double_x_double-->
-      <div class="container mt-3 exercise_cls" id="double_x_double_container" style="display: none;">
-        <h2>Slower = Faster</h2>
-        <div class="card">
-          <div class="card-header text-center">0 Level. Build Patience. (double x double)</div>
-          <div class="card-body">
-            <div class="container mt-3">
-              <label for="integerInput"  class="form-label ">   <span id="double_x_double_Q1">2</span><span id="operator_symbl">*</span><span id="double_x_double_Q2">3</span></label>
-              <input type="number" class="form-control  answr_cls " id="double_x_double_input" placeholder="your answer" step="1" style="width: 20%;">
-            </div>
-            <br/>
-            <button type="button" id="start_btn" class="btn btn-dark">Start</button>
-          </div> 
-          <div class="card-footer">
-            <div class="container-fluid">
-              <div class="row">
-                <div class="col-12">
-                  <div class="form-check form-switch">
-                    <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
-                    <label class="form-check-label" for="flexSwitchCheckChecked">Check Your Patience</label>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!--double_x_triple-->
-      <div class="container mt-3 exercise_cls" id="double_x_triple_container" style="display: none;">
-        <h2>Slower = Faster</h2>
-        <div class="card">
-          <div class="card-header text-center">0 Level. Build Patience. (double x triple)</div>
-          <div class="card-body">
-            <div class="container mt-3">
-              <label for="integerInput" class="form-label">   <span id="double_x_triple_Q1">2</span><span id="operator_symbl">*</span><span id="double_x_triple_Q2">3</span></label>
-              <input type="number" class="form-control answr_cls " id="double_x_triple_input" placeholder="your answer" step="1" style="width: 20%;">
-            </div>
-            <br/>
-            <button type="button" id="start_btn" class="btn btn-dark">Start</button>
-          </div> 
-          <div class="card-footer">
-            <div class="container-fluid">
-              <div class="row">
-                <div class="col-12">
-                  <div class="form-check form-switch">
-                    <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
-                    <label class="form-check-label" for="flexSwitchCheckChecked">Check Your Patience</label>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!--triple_x_triple-->
-      <div class="container mt-3 exercise_cls" id="triple_x_triple_container" style="display: none;">
-        <h2>Slower = Faster</h2>
-        <div class="card">
-          <div class="card-header text-center">0 Level. Build Patience. (triple x triple)</div>
-          <div class="card-body">
-            <div class="container mt-3">
-              <label for="integerInput" class="form-label">   <span id="triple_x_triple_Q1">2</span><span id="operator_symbl">*</span><span id="triple_x_triple_Q2">3</span></label>
-              <input type="number" class="form-control answr_cls " id="triple_x_triple_input" placeholder="your answer" step="1" style="width: 20%;">
-            </div>
-            <br/>
-            <button type="button" id="start_btn" class="btn btn-dark">Start</button>
-          </div> 
-          <div class="card-footer">
-            <div class="container-fluid">
-              <div class="row">
-                <div class="col-12">
-                  <div class="form-check form-switch">
-                    <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
-                    <label class="form-check-label" for="flexSwitchCheckChecked">Check Your Patience</label>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!--customize-->
-      <div class="container mt-3 exercise_cls" id="custom_x_digit_container" style="display: none;">
-        <h2>Slower = Faster</h2>
-        <div class="card">
-          <div class="card-header text-center">0 Level. Build Patience. customize</div>
-          <div class="card-body">
-            <div class="container mt-3">
-              <label for="integerInput" class="form-label">   <span id="custom_x_digit_Q1">2</span><span id="operator_symbl">*</span><span id="custom_x_digit_Q2">3</span></label>
-              <input type="number" class="form-control answr_cls " id="custom_x_digit_input" placeholder="your answer" step="1" style="width: 20%;">
-            </div>
-            <br/>
-            <button type="button" id="start_btn" class="btn btn-dark">Start</button>
-          </div> 
-          <div class="card-footer">
-            <div class="container-fluid">
-              <div class="row">
-                <div class="col-12">
-                  <div class="form-check form-switch">
-                    <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
-                    <label class="form-check-label" for="flexSwitchCheckChecked">Check Your Patience</label>
-                  </div>
-                </div>
-              </div>
+          <div class="col-2">
+            <div class="form-check form-switch">
+              <input class="form-check-input" type="checkbox" role="switch" id="natural_way_switch" checked>
+              <label class="form-check-label" for="flexSwitchCheckChecked">Natural Way</label>
             </div>
           </div>
         </div>
       </div>
     </div>
-    
-  </div>
-</div>
+      
+    </div>
 
-<div class="mt-5 p-4 bg-dark text-white text-center">
-  <p>Footer</p>
-</div>
-
-</body>
+  </nav>
+    <div class="container mt-5">
+      <div class="row">
+        <div class="col-sm-4" id="topic_list_colm">
+        </div>
+     
+    </div>
+  </body>
 </html>
