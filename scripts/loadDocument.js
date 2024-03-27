@@ -1,9 +1,10 @@
 //import { TopicToggle,ChangeQuestion,subExerciseHandler,ChangeOperator,SetupSeeMemorizeWrite,LoadComponent } from "./eventFactory.js";
-import { topicIds,subTopicIds ,slctOprtionsIds} from './config.js';
+import { topicIds } from './config.js';
 import { Intializer } from "./intializer.js";
 
 export function LoadDocument(){
     createTopicNavList();
+   
  }
 
  function createTopicNavList(){

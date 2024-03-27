@@ -1,9 +1,10 @@
 import {RandomNumGen} from  "./randomNumGenerator.js";
-import { topicIds,subTopicIds } from './config.js';
+import { topicIds,subTopicIds,toToggleForDeviceIds } from './config.js';
 import { LoadQuestion } from './loadQuestion.js';
 import { LoadDataExercise } from './loadDataExercise.js';
 import { preparePanel,buildSMWExcercise,endSMWExcercise } from './memoryBuilder/preparePanel.js';
 import{RandomNumSetGen} from './randomNumGenerator.js';
+import {checkDevice} from "./checkDevice.js";
 
 export function TopicToggle(event){
    
@@ -119,3 +120,19 @@ export function SetupSeeMemorizeWrite(){
 export function EndSMWExercise(){
     endSMWExcercise();
 }
+
+
+export function toggleDevicePanel(){
+    debugger;
+    let deviceType = checkDevice();
+      
+    
+        toToggleForDeviceIds.forEach(panel_Id => {
+            debugger;
+            let panelId = panel_Id;
+            let  comp = document.getElementById(panelId);
+            if(comp){
+                comp.style.display = deviceType !='Mobile' ? 'block' : 'none';
+            }
+        });
+ }

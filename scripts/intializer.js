@@ -1,4 +1,4 @@
-import { TopicToggle,ChangeQuestion,subExerciseHandler,ChangeOperator,SetupSeeMemorizeWrite,SeeMemorizeWriteSetup,EndSMWExercise } from "./eventFactory.js";
+import { TopicToggle,ChangeQuestion,subExerciseHandler,ChangeOperator,SetupSeeMemorizeWrite,SeeMemorizeWriteSetup,EndSMWExercise,toggleDevicePanel } from "./eventFactory.js";
 import { topicIds,subTopicIds ,slctOprtionsIds,seeMemorizeWriteIds} from './config.js';
 
 export function Intializer(){
@@ -8,7 +8,7 @@ export function Intializer(){
     onclickEventIntializer();
     inputIntializer();
     onChangeIntializer();
-  
+    afterEveryThing();
  }
 
 function onclickEventIntializer(){
@@ -61,4 +61,11 @@ function onChangeIntializer(){
         }
     });
 
+}
+
+
+
+function afterEveryThing(){
+   debugger;
+  toggleDevicePanel();
 }
