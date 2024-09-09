@@ -1,7 +1,7 @@
 import { setSharedArray,setSharedArray_MB } from './sharedData.js';
 
 export function RandomNumGen(elemntId){
-  //  //debugger; 
+  debugger; 
     let elemId= elemntId;
     const [firstVal, operator, secondVal] = elemId.split("_");
 
@@ -36,7 +36,7 @@ function generateUniqueCombinations(range1, range2, desiredLength = 200) {
   }
 
   export function RandomNumSetGen(elemId){
-    
+   // debugger;
     let tempArry = elemId.split('_');
     if(tempArry.length ==2){
       let digitStr = tempArry[1];
@@ -50,13 +50,14 @@ function generateUniqueCombinations(range1, range2, desiredLength = 200) {
  
 
 function generateUniqueSet(range) {
-  
-    const numArray = [];
-  
-    for (let i = range[0]; i <= range[1]; i++) {
-          numArray.push(i);
-    }
 
+    let numArray = [];
+    
+  for (let i = range[0]; i <= range[1]; i++) {
+          numArray.push(i);
+    } 
+    
+   
     let  combinations = generateCombinations(numArray);
     console.log(combinations);
     return combinations;
@@ -66,22 +67,24 @@ function generateUniqueSet(range) {
 
 
 function generateCombinations(numArray) {
-    const combinations = [];
+  
+  const combinations = [];
 
     const generate = (arr, index, combination) => {
-        if (combination.length === 5) {
+     
+      if (combination.length === 5) {
             combinations.push(shuffle(combination)); // Shuffle the combination before pushing
             return;
         }
 
-        if (index >= arr.length) return;
+        if (index >= arr.length || combinations.length == 20) return;
 
         generate(arr, index + 1, [...combination, arr[index]]);
         generate(arr, index + 1, [...combination]);
     };
 
     generate(numArray, 0, []);
-
+    debugger;  
     return combinations;
 }
 
@@ -95,4 +98,4 @@ function shuffle(array) {
   }
   return array;
 }
-  
+

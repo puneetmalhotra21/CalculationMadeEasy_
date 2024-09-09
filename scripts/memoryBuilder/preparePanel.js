@@ -35,6 +35,18 @@ export function preparePanel(){
   function loadChallenge(){
     debugger;
    const numSetArray = getSharedArray_MB();
-   document.getElementById('RAM_random_num').innerText = numSetArray[0];
-   debugger;
+   let randomNumElem =  document.getElementById('RAM_random_num');
+   let count = 0;
+   if(randomNumElem){
+       randomNumElem.innerText = numSetArray[0];
+      setInterval(function() {
+        debugger;
+          count =  count <numSetArray.length ? count +1 : 0;
+        
+          randomNumElem.innerText = numSetArray[count];
+      }, 3000);
+   }
+   
+   
+      debugger;
   }

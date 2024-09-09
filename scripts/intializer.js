@@ -1,5 +1,5 @@
-import { TopicToggle,ChangeQuestion,subExerciseHandler,ChangeOperator,SetupSeeMemorizeWrite,SeeMemorizeWriteSetup,EndSMWExercise,toggleDevicePanel } from "./eventFactory.js";
-import { topicIds,subTopicIds ,slctOprtionsIds,seeMemorizeWriteIds} from './config.js';
+import { PatienceSwitchToggle, TopicToggle,ChangeQuestion,subExerciseHandler,ChangeOperator,SetupSeeMemorizeWrite,SeeMemorizeWriteSetup,EndSMWExercise,toggleDevicePanel } from "./eventFactory.js";
+import { topicIds,subTopicIds ,slctOprtionsIds,seeMemorizeWriteIds,patienceSwitchIds} from './config.js';
 
 export function Intializer(){
    
@@ -7,7 +7,8 @@ export function Intializer(){
   
     onclickEventIntializer();
     inputIntializer();
-    onChangeIntializer();
+    onChangeSelctOp();
+    patienceSwitchChange()
     afterEveryThing();
  }
 
@@ -47,11 +48,12 @@ function inputIntializer(){
     Array.from(elems).forEach(function(element) {
             element.addEventListener("input", ChangeQuestion);
     });
+
  // Exercise_your_answer_change ended
 }
 
 
-function onChangeIntializer(){
+function onChangeSelctOp(){
 
     slctOprtionsIds.forEach(function (id) {
         var element = document.getElementById(id);
@@ -63,7 +65,15 @@ function onChangeIntializer(){
 
 }
 
-
+function patienceSwitchChange(){
+    debugger;
+    patienceSwitchIds.forEach(function (id) {
+        var element = document.getElementById(id);
+        if (element) { 
+            element.addEventListener("change", PatienceSwitchToggle);
+        }
+    });
+}
 
 function afterEveryThing(){
    debugger;
