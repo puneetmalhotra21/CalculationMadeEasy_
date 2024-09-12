@@ -1,5 +1,5 @@
-import { PatienceSwitchToggle, TopicToggle,ChangeQuestion,subExerciseHandler,ChangeOperator,SetupSeeMemorizeWrite,SeeMemorizeWriteSetup,EndSMWExercise,toggleDevicePanel } from "./eventFactory.js";
-import { topicIds,subTopicIds ,slctOprtionsIds,seeMemorizeWriteIds,patienceSwitchIds} from './config.js';
+import { PatienceSwitchToggle,StartCheckHandler, TopicToggle,ChangeQuestion,subExerciseHandler,ChangeOperator,SetupSeeMemorizeWrite,SeeMemorizeWriteSetup,EndSMWExercise,toggleDevicePanel } from "./eventFactory.js";
+import { topicIds,subTopicIds ,slctOprtionsIds,seeMemorizeWriteIds,patienceSwitchIds,counterstartIds} from './config.js';
 
 export function Intializer(){
    
@@ -8,7 +8,8 @@ export function Intializer(){
     onclickEventIntializer();
     inputIntializer();
     onChangeSelctOp();
-    patienceSwitchChange()
+    patienceSwitchChange();
+    StartCheckChange();
     afterEveryThing();
  }
 
@@ -75,6 +76,15 @@ function patienceSwitchChange(){
     });
 }
 
+function StartCheckChange(){
+debugger;
+    counterstartIds.forEach(function (id) {
+        var element = document.getElementById(id);
+        if (element) { 
+            element.addEventListener("change", StartCheckHandler);
+        }
+    });
+}
 function afterEveryThing(){
    debugger;
   toggleDevicePanel();

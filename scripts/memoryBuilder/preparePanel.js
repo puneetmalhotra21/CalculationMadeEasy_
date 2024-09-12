@@ -1,7 +1,7 @@
 import {getSharedArray_MB } from '../sharedData.js';
-
+let currRAMInterval=null;
 export function preparePanel(){
-   debugger;
+  // debugger;
     togglePanel('start');
     loadChallenge();
     
@@ -13,7 +13,7 @@ export function preparePanel(){
   }
 
   export function endSMWExcercise(){
-
+    clearInterval(currRAMInterval);
     togglePanel('end');
   }
 
@@ -33,20 +33,34 @@ export function preparePanel(){
   }
 
   function loadChallenge(){
-    debugger;
    const numSetArray = getSharedArray_MB();
+   debugger;
    let randomNumElem =  document.getElementById('RAM_random_num');
    let count = 0;
+   let cycle=0;
+
    if(randomNumElem){
-       randomNumElem.innerText = numSetArray[0];
-      setInterval(function() {
-        debugger;
-          count =  count <numSetArray.length ? count +1 : 0;
-        
-          randomNumElem.innerText = numSetArray[count];
-      }, 3000);
+        if(cycle == 0){
+            randomNumElem.innerText = numSetArray[0];
+        } 
+
+        currRAMInterval=  setInterval(function() {
+          debugger;
+                                  cycle++;
+                                  if(cycle == 10){
+                                      clearInterval(currRAMInterval);
+                                      return;
+                                  } 
+                                
+                                  if((count < numSetArray.length) && cycle%2==0){
+                                      count++;
+                                      debugger;
+                                      randomNumElem.innerText = numSetArray[count];
+                                  }else{
+                                     randomNumElem.innerText ='';
+                                  }
+           
+                          }, 3000);
    }
    
-   
-      debugger;
   }

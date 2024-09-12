@@ -8,7 +8,7 @@ import{RandomNumSetGen} from './randomNumGenerator.js';
 import {checkDevice} from "./checkDevice.js";
 
 let currentInterval = globalVars.currentInterval;
-
+let currPanelId ='';
 export function TopicToggle(event){
     debugger;
    
@@ -101,13 +101,13 @@ export function TopicToggle(event){
  export function subExerciseHandler(event){
     
     debugger;   
-
+    currPanelId = event.target.id.split('_sub');
     if (currentInterval) {
         debugger;
         resetCounter(currentInterval);
             document.getElementById(event.target.id+'_countdwnNum').innerHTML = 10;
     }
-    
+    console.log('event.target.id::'+event.target.id);
     let disp =   document.getElementById(event.target.id+'_countrPanel').style.display;
     debugger;
     document.getElementById(event.target.id+'_patience_switch').checked = disp !='none' ? true: false;
@@ -130,7 +130,7 @@ export function TopicToggle(event){
     
     let opVal =  document.getElementById(slctId).selectedOptions[0].innerText;
     document.getElementById(currOpId).innerHTML = opVal !='Select Operation' ? opVal : 'x';
-    if(idstr!='' && selctdOp !='Select Operation' ) startCounter(10,idstr); 
+   // if(idstr!='' && selctdOp !='Select Operation' ) startCounter(10,idstr); 
  }
 
 export function SetupSeeMemorizeWrite(){
@@ -145,6 +145,58 @@ export function EndSMWExercise(){
     endSMWExcercise();
 }
 
+export function StartCheckHandler(event){
+
+    let panelType='';
+    let startId = event.target.id;
+    let checkVal = false;
+    let selctOptId = '';
+    let slctElem = null;
+    let slctVal ='';
+    let countrid='';
+    let patienceid = '';
+    let countrElem = null;
+    let countrPanelId = '';
+    let countrPanelElem = null;
+    let patieneElem = null;
+
+        panelType = currPanelId = startId.split('_start')[0];
+        selctOptId = panelType + '_slct';
+        checkVal =  event.target.checked;
+        slctElem = document.getElementById(selctOptId);
+        slctVal = slctElem!=null ? slctElem.value : '';
+        countrid = panelType + '_countdwnNum';
+        countrPanelId  = panelType + '_countrPanel';
+        debugger;
+        patienceid =  panelType + '_patience_switch';
+        countrElem = document.getElementById(countrid);
+        patieneElem = document.getElementById(patienceid);
+        countrPanelElem = document.getElementById(countrPanelId);
+
+        if(slctVal=='Select Operation'){
+            alert('Select Operation First') ;
+            document.getElementById('single_x_single_start').checked = false;
+            return;
+        }
+        debugger;
+        if(countrElem !=null && slctElem!=null && patieneElem!=null && countrPanelElem!=null ){
+            if(!checkVal){
+                if (currentInterval) {
+                    resetCounter(currentInterval);
+                    countrElem.innerHTML = 10;
+                    countrPanelElem.style.display=  'none';
+                    slctElem.disabled = false;
+                    patieneElem.disabled = false;
+                }
+            }else{
+                    startCounter(10,countrid);
+                    countrPanelElem.style.display = 'block';
+                    slctElem.disabled = true;
+                    patieneElem.disabled = true;
+            }
+        }
+       
+}
 
 export function toggleDevicePanel(){
     //debugger
@@ -166,20 +218,30 @@ export function toggleDevicePanel(){
     if (currentInterval) {
         resetCounter(currentInterval);
     }
-    let count =secs;
- 
+    let count = secs;
+    let counterElem =   document.getElementById(idstr);
+    counterElem.style.color ='Black';
+    //count = counterElem.innerHTML = secs -1;
     currentInterval =    setInterval(function() {
         //debugger
-        if (count == 0) {
-            resetCounter(currentInterval)
+        if (count == 0) {   
+                resetCounter(currentInterval);
+                let countdwnElem = document.getElementById(currPanelId+'_countdwnNum');
+                document.getElementById(currPanelId+'_start').checked = false;
+                document.getElementById(currPanelId+'_startlabel').innerHTML = 'Start Again';
+                document.getElementById(currPanelId+'_patience_switch').disabled = false;
+                document.getElementById(currPanelId+'_slct').disabled = false; 
+                countdwnElem.innerHTML = 'End';
+                countdwnElem.style.color = 'Red';
+                return;
         }
-        let counterElem =   document.getElementById(idstr);
+       
         if(counterElem!=undefined && counterElem!=null){
             counterElem.innerHTML= count;
         }
        
           count--;
-      }, secs*100);
+      }, 1000);
    
  } 
 
@@ -189,11 +251,12 @@ export function toggleDevicePanel(){
    let checkVal = event.target.checked;
    if( checkid.includes('_patience_switch')){
         let panelType = checkid.split('_patience_switch')[0];
-        let countrid= panelType + '_countrPanel';
-        let countElem = document.getElementById(countrid);
+       // let countrid= panelType + '_countrPanel';
+        let startId= panelType + '_countstart';
+        let countstartElem = document.getElementById(startId);
         
-        if(countElem){
-            countElem.style.display= checkVal ? 'block' : 'none';
+        if(countstartElem){
+            countstartElem.style.display= checkVal ? 'block' : 'none';
         }
 
    } 

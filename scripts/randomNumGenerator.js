@@ -42,6 +42,7 @@ function generateUniqueCombinations(range1, range2, desiredLength = 200) {
       let digitStr = tempArry[1];
       const range = getRange(digitStr);
       const result = generateUniqueSet(range);
+      debugger;
       setSharedArray_MB(result);
     }
     

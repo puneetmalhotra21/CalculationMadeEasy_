@@ -5,7 +5,7 @@
               <div class="card-header text-center" style=" background-color: #d2e0e4;">0 Level. Build Patience. (single x single)</div>
               <div class="card-body">
                 <div class="row">
-                  <div class="col-auto">
+                  <div class="col-auto col-3">
                     <select id="single_x_single_slct" style="text-align-last: center;" class="form-select form-select-sm" aria-label=".form-select-sm example">
                       <option selected>Select Operation</option>
                       <option value="1">+</option>
@@ -14,7 +14,8 @@
                       <option value="3">/</option>
                     </select>
                   </div>
-                  <div class="col-auto float-end" id="single_x_single_countrPanel" style="display: none;">
+                  
+                  <div class="col-auto float-end col-2" id="single_x_single_countrPanel" style="display: none;">
                     <div >
                       <div id="countdownClock" class="countdown-clock">
                         <span id="single_x_single_countdwnNum"  class="">10</span>
@@ -33,12 +34,21 @@
               <div class="card-footer" style=" background-color: #d2e0e4;">
                 <div class="container-fluid">
                   <div class="row">
-                    <div class="col-12">
+                    <div class="col-4">
                       <div class="form-check form-switch">
                         <input class="form-check-input" type="checkbox" role="switch" id="single_x_single_patience_switch">
                         <label class="form-check-label" for="flexSwitchCheckChecked">Check Your Patience</label>
                       </div>
                     </div>
+                    <div class="col-auto float-end col-6" id="single_x_single_countstart"  style="display:none">
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="single_x_single_start">
+                        <label class="form-check-label" for="flexCheckDefault" id="single_x_single_startlabel">
+                          Start
+                        </label>
+                      </div>
+                    </div>
+                  </div>
                   </div>
                 </div>
               </div>
@@ -60,7 +70,7 @@
                       <option value="3">/</option>
                     </select>
                   </div>
-                  <div class="col-auto float-end" id="single_x_double_countrPanel">
+                  <div class="col-auto float-end" id="single_x_double_countrPanel" style="display:none">
                     <div >
                       <div id="countdownClock" class="countdown-clock">
                         <span id="single_x_double_countdwnNum"  class="">10</span>
@@ -78,10 +88,18 @@
               <div class="card-footer">
                 <div class="container-fluid">
                   <div class="row">
-                    <div class="col-12">
+                    <div class="col-6">
                       <div class="form-check form-switch">
                         <input class="form-check-input" type="checkbox" role="switch" id="single_x_double_patience_switch">
                         <label class="form-check-label" for="flexSwitchCheckChecked">Check Your Patience</label>
+                      </div>
+                    </div>
+                    <div class="col-auto float-end col-6" id="single_x_double_countstart"  style="display: none;">
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="single_x_double_start">
+                        <label class="form-check-label" for="flexCheckDefault" id="single_x_double_startlabel">
+                          Start
+                        </label>
                       </div>
                     </div>
                   </div>
@@ -96,7 +114,7 @@
               <div <div class="card-header text-center" style=" background-color: #d2e0e4;">0 Level. Build Patience. (single x triple)</div>
               <div class="card-body">
                 <div class="row">
-                  <div class="col-auto">
+                  <div class="col-auto col-3">
                     <select id="single_x_triple_slct"  style="text-align-last: center; " class="form-select form-select-sm" aria-label=".form-select-sm example">
                       <option selected >Select Operation</option>
                       <option value="1">+</option>
@@ -105,12 +123,13 @@
                       <option value="3">/</option>
                     </select>
                   </div>
-                  <div class="col-auto float-end" id="single_x_triple_countrPanel">
+                  <div class="col-auto float-end col-2" id="single_x_triple_countrPanel" style="display:none">
                     <div >
                       <div id="countdownClock" class="countdown-clock">
                         <span id="single_x_triple_countdwnNum"  class="">10</span>
                       </div>
                     </div>
+                  </div>
                   </div>
                 </div>
                 <div class="container mt-3" id="single_x_triple_panel" style="background-color: rgb(235 235 235);">
@@ -123,11 +142,21 @@
               <div class="card-footer">
                 <div class="container-fluid">
                   <div class="row">
-                    <div class="col-12">
+                    <div class="col-4">
                       <div class="form-check form-switch">
                         <input class="form-check-input" type="checkbox" role="switch" id="single_x_triple_patience_switch">
                         <label class="form-check-label" for="flexSwitchCheckChecked">Check Your Patience</label>
                       </div>
+                    </div>
+                    <div class="col-auto float-end col-6" id="single_x_triple_countstart"  style="display:none">
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="single_x_triple_start">
+                        <label class="form-check-label" for="flexCheckDefault" id="single_x_triple_startlabel">
+                          Start
+                        </label>
+                      </div>
+                    </div>
+                      
                     </div>
                   </div>
                 </div>
@@ -150,7 +179,7 @@
                       <option value="3">/</option>
                     </select>
                   </div>
-                  <div class="col-auto float-end" id="double_x_double_countrPanel" >
+                  <div class="col-auto float-end" id="double_x_double_countrPanel" style="display:none">
                     <div >
                       <div id="countdownClock" class="countdown-clock">
                         <span id="double_x_double_countdwnNum"  class="">10</span>
@@ -168,11 +197,21 @@
               <div class="card-footer">
                 <div class="container-fluid">
                   <div class="row">
-                    <div class="col-12">
+                    <div class="col-4">
                       <div class="form-check form-switch">
                         <input class="form-check-input" type="checkbox" role="switch" id="double_x_double_patience_switch">
                         <label class="form-check-label" for="flexSwitchCheckChecked">Check Your Patience</label>
                       </div>
+                    </div>
+                    <div class="col-auto float-end col-6" id="double_x_double_countstart"  style="display:none">
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="double_x_double_start">
+                        <label class="form-check-label" for="flexCheckDefault" id="double_x_double_startlabel">
+                          Start
+                        </label>
+                      </div>
+                    </div>
+                      
                     </div>
                   </div>
                 </div>
@@ -195,7 +234,7 @@
                       <option value="3">/</option>
                     </select>
                   </div>
-                  <div class="col-auto float-end" id="double_x_triple_countrPanel" >
+                  <div class="col-auto float-end" id="double_x_triple_countrPanel" style="display:none">
                     <div >
                       <div id="countdownClock" class="countdown-clock">
                         <span id="double_x_triple_countdwnNum"  class="">10</span>
@@ -213,12 +252,21 @@
               <div class="card-footer">
                 <div class="container-fluid">
                   <div class="row">
-                    <div class="col-12">
+                    <div class="col-4">
                       <div class="form-check form-switch">
                         <input class="form-check-input" type="checkbox" role="switch" id="double_x_triple_patience_switch">
                         <label class="form-check-label" for="flexSwitchCheckChecked">Check Your Patience</label>
                       </div>
                     </div>
+                    <div class="col-auto float-end col-6" id="double_x_triple_countstart"  style="display:none">
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="double_x_triple_start">
+                        <label class="form-check-label" for="flexCheckDefault" id="double_x_triple_startlabel">
+                          Start
+                        </label>
+                      </div>
+                    </div>
+                  </div>
                   </div>
                 </div>
               </div>
@@ -231,7 +279,7 @@
               <div <div class="card-header text-center" style=" background-color: #d2e0e4;">0 Level. Build Patience. (triple x triple)</div>
               <div class="card-body">
                 <div class="row">
-                  <div class="col-auto">
+                  <div class="col-auto col-3">
                     <select id="triple_x_triple_slct" style="text-align-last: center; " class="form-select form-select-sm" aria-label=".form-select-sm example">
                       <option selected >Select Operation</option>
                       <option value="1">+</option>
@@ -240,7 +288,15 @@
                       <option value="3">/</option>
                     </select>
                   </div>
-                  <div class="col-auto float-end" id="triple_x_triple_countrPanel">
+                  <div class="col-auto float-end col-2" id="triple_x_triple_countstart"  style="display:none"></div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" value="" id="triple_x_triple_start">
+                      <label class="form-check-label" for="flexCheckDefault" id="triple_x_triple_startlabel">
+                        Start
+                      </label>
+                    </div>
+                  </div>
+                  <div class="col-auto float-end col-2" id="triple_x_triple_countrPanel" style="display:none">
                     <div >
                       <div id="countdownClock" class="countdown-clock">
                         <span id="triple_x_triple_countdwnNum"  class="">10</span>
@@ -258,10 +314,18 @@
               <div class="card-footer">
                 <div class="container-fluid">
                   <div class="row">
-                    <div class="col-12">
+                    <div class="col-4">
                       <div class="form-check form-switch">
                         <input class="form-check-input" type="checkbox" role="switch" id="triple_x_triple_patience_switch">
                         <label class="form-check-label" for="flexSwitchCheckChecked">Check Your Patience</label>
+                      </div>
+                    </div>
+                    <div class="col-auto float-end col-6" id="triple_x_triple_countstart"  style="display:none">
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="triple_x_triple_start">
+                        <label class="form-check-label" for="flexCheckDefault" id="triple_x_triple_startlabel">
+                          Start
+                        </label>
                       </div>
                     </div>
                   </div>

@@ -1,5 +1,6 @@
 let globalVars = {
-  currentInterval: null, // This will store the interval ID
+  currentInterval: null,
+  currPanelId: '',
 };
 
 // Exercise_Random_Question_Shared_Data Started
@@ -27,10 +28,12 @@ let MB_sharedArray = [];
 let MB_arrIndx = 0;
 
 function setSharedArray_MB(arr) {
+  debugger;
   MB_sharedArray = arr;
 }
 
 function getSharedArray_MB() {
+  debugger;
   return MB_sharedArray;
 }
 
